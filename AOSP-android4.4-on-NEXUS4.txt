@@ -1,0 +1,27 @@
+
+1. download AOSP source code:
+
+
+repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.2_r2
+
+repo sync
+
+
+2. download binaries for NEXUS 4:
+
+https://developers.google.com/android/nexus/drivers#mako
+
+wget https://dl.google.com/dl/android/aosp/broadcom-mako-jwr66y-137ef66d.tgz
+wget https://dl.google.com/dl/android/aosp/lge-mako-jwr66y-a85ca75e.tgz
+wget https://dl.google.com/dl/android/aosp/qcom-mako-jwr66y-a5becaf1.tgz
+
+
+ tar xvf broadcom-mako-jwr66y-137ef66d.tgz &&tar xvf lge-mako-jwr66y-a85ca75e.tgz &&tar xvf qcom-mako-jwr66y-a5becaf1.tgz 
+
+./extract-broadcom-mako.sh && ./extract-lge-mako.sh && ./extract-qcom-mako.sh
+
+
+3.
+source build/envsetup.sh
+
+lunch full_mako-eng
