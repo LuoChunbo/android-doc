@@ -1,5 +1,7 @@
+Building android 4.4.2 for GOOGLE NEXUS 4.
 
-1. download AOSP source code:
+
+1. download source code 
 
 
 repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.2_r2
@@ -21,7 +23,30 @@ wget https://dl.google.com/dl/android/aosp/qcom-mako-jwr66y-a5becaf1.tgz
 ./extract-broadcom-mako.sh && ./extract-lge-mako.sh && ./extract-qcom-mako.sh
 
 
-3.
+3. compiling 
+
 source build/envsetup.sh
 
 lunch full_mako-eng
+
+make -j10
+
+4.deploy the image
+
+first.
+
+cd $ANDROID_PRODUCT_OUT
+ 
+ zip mako-4.4.2_r1-image.zip system.img boot.img   userdata.img recovery.img  android-info.txt
+
+ or:
+
+ make updatepackage
+
+
+fastboot -w update out/target/product/mako/full_mako-img-eng.cluo.zip
+
+
+
+
+
