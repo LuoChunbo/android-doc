@@ -1,0 +1,8 @@
+
+mkdir ~/mnt
+
+simg2img system.img sys.raw
+
+sudo mount -t ext4 -o loop sys.raw mnt
+
+
